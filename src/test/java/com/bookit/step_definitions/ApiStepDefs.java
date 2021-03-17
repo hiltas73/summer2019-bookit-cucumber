@@ -32,7 +32,7 @@ public class ApiStepDefs {
     @When("I get the current user information from api")
     public void i_get_the_current_user_information_from_api() {
 
-        String url = ConfigurationReader.get("qa1api.uri")+"/api/users/me";
+        String url = ConfigurationReader.get("qa2api.uri")+"/api/users/me";
 
         response = given().header("Authorization", token)
                 .when().get(url);
@@ -40,8 +40,8 @@ public class ApiStepDefs {
     }
 
     @Then("status code should be {int}")
-    public void status_code_should_be(int int1) {
-        Assert.assertEquals(response.statusCode(),int1);
+    public void status_code_should_be(int statusCode) {
+        Assert.assertEquals(response.statusCode(),statusCode);
 
     }
 
