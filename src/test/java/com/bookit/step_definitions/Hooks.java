@@ -22,20 +22,20 @@ public class Hooks {
 		DBUtils.createConnection();
 
 	}
-	
+
 	@After("@db")
 	public void afterDbHook() {
 		System.out.println("closing database connection");
 		DBUtils.destroyConnection();
 
 	}
-	
+
 	@Before
 	public void setUp() {
 		// we put a logic that should apply to every scenario
 		Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-	
+
 	@After
 	public void tearDown(Scenario scenario) {
 		// only takes a screenshot if the scenario fails
