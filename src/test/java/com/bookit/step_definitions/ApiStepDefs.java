@@ -41,7 +41,7 @@ public class ApiStepDefs {
 
     @Then("status code should be {int}")
     public void status_code_should_be(int statusCode) {
-        Assert.assertEquals(response.statusCode(),statusCode);
+        Assert.assertEquals(statusCode, response.statusCode());
 
     }
 
